@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cr.employee.mapper.EmpMapper">
+
+    <select id="getEmps"
+            resultType="com.cr.employee.pojo.Emp">
+        SELECT * FROM emp WHERE did=#{did}
+    </select>
+
+    <insert id="insert">
+        insert into  emp(did,name,pw) values (#{did},#{name},#{pw})
+    </insert>
+
+
+    <select id="getById" resultType="com.cr.employee.pojo.Emp">
+        select * from emp where id=#{id}
+    </select>
+
+    <update id="update" parameterType="com.cr.employee.pojo.Emp">
+        update emp set name=#{name},pw=#{pw},did=#{id} where id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM emp where id=#{id}
+    </delete>
+
+</mapper>

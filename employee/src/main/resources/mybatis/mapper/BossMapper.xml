@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cr.employee.mapper.BossMapper">
+
+    <select id="getById"
+            resultType="com.cr.employee.pojo.Boss">
+        SELECT * FROM boss WHERE id=#{id}
+    </select>
+
+    <select id="checked" resultType="int">
+        select count(*) from boss where name=#{name} and pw=#{pw}
+    </select>
+
+    <select id="EmpDid" resultType="int">
+        select did from boss where name = #{name}
+    </select>
+
+
+</mapper>
